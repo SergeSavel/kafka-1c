@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6630c7e8-ec1a-4c3a-a180-9fdadf735f4c">
+  <name>Кафка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кафка</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="cc821945-b864-44d4-8878-e8f56e416fbc"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="67a22d78-ef99-435b-914c-95cdb5529ebf"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="126c920e-0ddd-4ce6-bbab-76469d574213"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="9d29b1f2-00b7-445c-acf2-a44fa48e63ae"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="0a649461-1549-4b8a-b57f-064b074e3146"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="e7b0d939-d94e-4694-94e0-e5771fc793e1"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="3b21a414-f354-4d36-9e33-56f72fdb93ac"/>
+  <configurationExtensionCompatibilityMode>8.3.26</configurationExtensionCompatibilityMode>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <defaultRoles>Role.КафкаАдминистрирование</defaultRoles>
+  <vendor>Савельев Сергей</vendor>
+  <version>5.0.0</version>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.Русский</defaultLanguage>
+  <briefInformation>
+    <key>ru</key>
+    <value>Подсистема взаимодействия с Apache Kafka через REST-прокси</value>
+  </briefInformation>
+  <copyright>
+    <key>ru</key>
+    <value>Автор Савельев Сергей</value>
+  </copyright>
+  <configurationInformationAddress>
+    <key>ru</key>
+    <value>https://github.com/SergeSavel/kafka-1c-subsystem</value>
+  </configurationInformationAddress>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.20</compatibilityMode>
+  <languages uuid="db4a9ccb-9ef5-4b3c-8577-b6fe5db1b62e">
+    <name>Русский</name>
+    <synonym>
+      <key>ru</key>
+      <value>Русский</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.Кафка</subsystems>
+  <commonPictures>CommonPicture.Кафка</commonPictures>
+  <roles>Role.КафкаАдминистрирование</roles>
+  <commonModules>CommonModule.КафкаКлиентСервер</commonModules>
+  <commonModules>CommonModule.КафкаПереопределяемый</commonModules>
+  <commonModules>CommonModule.КафкаПовтИсп</commonModules>
+  <commonModules>CommonModule.КафкаСервер</commonModules>
+  <scheduledJobs>ScheduledJob.КафкаВыгрузка</scheduledJobs>
+  <scheduledJobs>ScheduledJob.КафкаЗагрузка</scheduledJobs>
+  <catalogs>Catalog.КафкаКластеры</catalogs>
+  <catalogs>Catalog.КафкаШины</catalogs>
+  <enums>Enum.КафкаНаправленияОбмена</enums>
+  <enums>Enum.КафкаСердес</enums>
+  <dataProcessors>DataProcessor.КафкаАдаптер</dataProcessors>
+  <informationRegisters>InformationRegister.КафкаПозиции</informationRegisters>
+</mdclass:Configuration>
