@@ -33,9 +33,13 @@
     <key>ru</key>
     <value>Подсистема взаимодействия с Apache Kafka через REST-прокси</value>
   </briefInformation>
+  <detailedInformation>
+    <key>ru</key>
+    <value>Лицензия Apache 2.0</value>
+  </detailedInformation>
   <copyright>
     <key>ru</key>
-    <value>Автор Савельев Сергей</value>
+    <value>Савельев Сергей Владимирович</value>
   </copyright>
   <configurationInformationAddress>
     <key>ru</key>
