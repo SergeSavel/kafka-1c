@@ -18,7 +18,7 @@
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.КафкаАдминистрирование</defaultRoles>
   <vendor>Савельев Сергей</vendor>
-  <version>5.0.0</version>
+  <version>5.0.0-SNAPSHOT</version>
   <usedMobileApplicationFunctionalities>
     <functionality>
       <use>true</use>
@@ -49,7 +49,7 @@
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
   <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
-  <compatibilityMode>8.3.20</compatibilityMode>
+  <compatibilityMode>8.3.26</compatibilityMode>
   <languages uuid="db4a9ccb-9ef5-4b3c-8577-b6fe5db1b62e">
     <name>Русский</name>
     <synonym>
