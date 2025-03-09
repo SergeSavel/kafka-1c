@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="debf0415-64ef-4ed8-9da2-2c8c48479594">
+  <producedTypes>
+    <refType typeId="c1ebb7bc-eaed-406e-b0b9-4ea6b7f3f3fc" valueTypeId="6666d663-2e58-461c-b60a-a5fc1c6e2545"/>
+    <listType typeId="5cca01d1-d7c9-4ef9-8d5a-b31148e0bfa4" valueTypeId="2a84a0b4-abf6-4d88-b7fc-b7f29559a573"/>
+    <managerType typeId="b0e4c8cd-cc00-4e7d-903d-21d3f3ee27c5" valueTypeId="4845fb8e-76d4-4c97-a56a-383170a3803b"/>
+  </producedTypes>
+  <name>КафкаСердес</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кафка: Способы (де)сериализации</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Order</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="63d16452-a950-4252-8c2d-fb9c4b5bea5f">
+    <name>Игнорировать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Игнорировать</value>
+    </synonym>
+    <comment>Только для загрузки</comment>
+  </enumValues>
+  <enumValues uuid="c41b2562-af6b-4616-aec2-c5c93d542a1d">
+    <name>Null</name>
+    <synonym>
+      <key>ru</key>
+      <value>Null</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="6f877fd2-0a99-4475-a018-5fcd92397620">
+    <name>ДвоичныеДанные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Двоичные данные</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="122e956f-0ce6-4620-9456-367fc76a2cba">
+    <name>Строка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строка</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="0353214d-f7c9-4147-928d-2ffc9ae3a1d1">
+    <name>СтрокаAvro</name>
+    <synonym>
+      <key>ru</key>
+      <value>Строка (Avro)</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="4ea8c9e6-05d8-4e09-94ee-6ac00a1c652b">
+    <name>СтруктураAvro</name>
+    <synonym>
+      <key>ru</key>
+      <value>Структура (Avro)</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="164f415e-eaa6-43b2-9020-5769ac19204e">
+    <name>СтруктураJson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Структура (JSON)</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="961bb9f0-998f-4c3c-9daf-e540abcd9693">
+    <name>СоответствиеJson</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствие (Json)</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="afa0ebb8-ffd8-4b81-b04c-b997e54207b7">
+    <name>Xml</name>
+    <synonym>
+      <key>ru</key>
+      <value>XML</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="b6ea2a2d-4d7b-4673-b82d-cefb4b5c0b26">
+    <name>Uuid</name>
+    <synonym>
+      <key>ru</key>
+      <value>UUID</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

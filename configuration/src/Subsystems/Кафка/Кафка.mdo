@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6864e0f7-1522-4783-99fd-a40a2cfea55b">
+  <name>Кафка</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кафка</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.Кафка</picture>
+  </picture>
+  <content>CommonModule.КафкаКлиентСервер</content>
+  <content>CommonModule.КафкаПовтИсп</content>
+  <content>CommonModule.КафкаСервер</content>
+  <content>ScheduledJob.КафкаВыгрузка</content>
+  <content>ScheduledJob.КафкаЗагрузка</content>
+  <content>Catalog.КафкаШины</content>
+  <content>InformationRegister.КафкаПозиции</content>
+  <content>DataProcessor.КафкаАдаптер</content>
+  <content>Catalog.КафкаКластеры</content>
+  <content>Role.КафкаАдминистрирование</content>
+  <content>CommonModule.КафкаПереопределяемый</content>
+  <content>CommonPicture.Кафка</content>
+  <content>Enum.КафкаНаправленияОбмена</content>
+  <content>Enum.КафкаСердес</content>
+</mdclass:Subsystem>

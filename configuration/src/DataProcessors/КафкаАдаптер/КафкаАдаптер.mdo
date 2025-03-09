@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3d5f15b5-252e-4771-873a-9049063f69ec">
+  <producedTypes>
+    <objectType typeId="9789c714-a801-49ef-85fb-703f89d66f64" valueTypeId="a131ef5c-e151-4f20-9228-0af366839886"/>
+    <managerType typeId="f1e54215-58c1-480d-ba95-1b2c114a9a79" valueTypeId="0e6ce9d1-9c10-4b8b-9a16-a8804f3f723d"/>
+  </producedTypes>
+  <name>КафкаАдаптер</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кафка: Администрирование кластера</value>
+  </synonym>
+  <comment>Адаптер для работы с REST Proxy</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.КафкаАдаптер.Form.Администрирование</defaultForm>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Администрирование кластера</value>
+  </extendedPresentation>
+  <attributes uuid="81bbf52a-7e89-4708-b655-8835798136ff">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <comment>Описание ошибки прокси (в случае возникновения).</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c7aa748f-0b47-4f7b-ae3d-96943be2034f">
+    <name>КодОтвета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код ответа</value>
+    </synonym>
+    <comment>HTTP-код ответа прокси.</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="e347bc7c-1ae6-4c8e-8758-410fb4baa8e6">
+    <name>Администрирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Администрирование</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>
