@@ -75,7 +75,7 @@
 		<Metadata name="CommonModule.КафкаСервер.Module" id="a557bfc3-4c75-4564-bc3b-22b8bfacf6b4.0" configVersion="fecdd3e4ac25da45ac52f52a7d6fea5c00000000"/>
 		<Metadata name="CommonPicture.Кафка" id="59e0947c-20fa-4101-9f5d-85da7b5d070a" configVersion="392fdb43c1ee924993ff7da3f8e9524e00000000"/>
 		<Metadata name="CommonPicture.Кафка.Picture" id="59e0947c-20fa-4101-9f5d-85da7b5d070a.0" configVersion="abd71586683107439c28646c35d8af2600000000"/>
-		<Metadata name="Configuration.Кафка" id="e9f06dde-91f6-4095-ba37-d1b79f101719" configVersion="f30da13d2f6420419cd35e07c815ca8100000000"/>
+		<Metadata name="Configuration.Кафка" id="e9f06dde-91f6-4095-ba37-d1b79f101719" configVersion="bd2bbec5c5e4e24697a2eb624ade7c2700000000"/>
 		<Metadata name="Configuration.Кафка.ParentConfigurations" id="59eb107f-0e97-4199-824b-bcd408a14c9d.4" configVersion="ef7f867a9d96824d8f622fbf8384f6c800000000"/>
 		<Metadata name="DataProcessor.КафкаАдаптер" id="3d5f15b5-252e-4771-873a-9049063f69ec" configVersion="28fc571a430ee74fbf8fc4e44751c22600000000">
 			<Metadata name="DataProcessor.КафкаАдаптер.Attribute.ОписаниеОшибки" id="81bbf52a-7e89-4708-b655-8835798136ff"/>
