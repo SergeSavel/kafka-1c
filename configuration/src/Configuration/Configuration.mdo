@@ -31,11 +31,11 @@
   </detailedInformation>
   <copyright>
     <key>ru</key>
-    <value>Савельев Сергей Владимирович (serge@savel.pro)</value>
+    <value>Сергей Савельев (serge@savel.pro)</value>
   </copyright>
   <configurationInformationAddress>
     <key>ru</key>
-    <value>https://github.com/SergeSavel/kafka-1c-subsystem</value>
+    <value>https://github.com/SergeSavel/kafka-1c</value>
   </configurationInformationAddress>
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>

@@ -1587,24 +1587,6 @@
       <common>true</common>
     </edit>
   </attributes>
-  <formCommands>
-    <name>КомандаПоУмолчанию</name>
-    <title>
-      <key>ru</key>
-      <value>Назначить по умолчанию</value>
-    </title>
-    <id>1</id>
-    <use>
-      <common>true</common>
-    </use>
-    <action xsi:type="form:FormCommandHandlerContainer">
-      <handler>
-        <name>КомандаПоУмолчанию</name>
-      </handler>
-    </action>
-    <modifiesStoredData>true</modifiesStoredData>
-    <currentRowUse>Auto</currentRowUse>
-  </formCommands>
   <commandInterface>
     <navigationPanel/>
     <commandBar/>

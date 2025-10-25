@@ -10,7 +10,6 @@
     <value>Кафка: Администрирование кластера</value>
   </synonym>
   <comment>Адаптер для работы с REST Proxy</comment>
-  <defaultForm>DataProcessor.КафкаАдаптер.Form.Администрирование</defaultForm>
   <extendedPresentation>
     <key>ru</key>
     <value>Администрирование кластера</value>
@@ -46,13 +45,4 @@
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
   </attributes>
-  <forms uuid="e347bc7c-1ae6-4c8e-8758-410fb4baa8e6">
-    <name>Администрирование</name>
-    <synonym>
-      <key>ru</key>
-      <value>Администрирование</value>
-    </synonym>
-    <usePurposes>PersonalComputer</usePurposes>
-    <usePurposes>MobileDevice</usePurposes>
-  </forms>
 </mdclass:DataProcessor>
