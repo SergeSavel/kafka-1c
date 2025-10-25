@@ -129,7 +129,7 @@
     <type>
       <types>String</types>
       <stringQualifiers>
-        <length>200</length>
+        <length>255</length>
       </stringQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
@@ -151,7 +151,7 @@
     <type>
       <types>Number</types>
       <numberQualifiers>
-        <precision>4</precision>
+        <precision>5</precision>
         <nonNegative>true</nonNegative>
       </numberQualifiers>
     </type>

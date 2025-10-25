@@ -133,32 +133,8 @@
     <maxValue xsi:type="core:UndefinedValue"/>
     <fillChecking>ShowError</fillChecking>
     <fillValue xsi:type="core:ReferenceValue">
-      <value>Catalog.КафкаКластеры.ПоУмолчанию</value>
+      <value>7bc236f4-930d-4f33-9af5-44eb8bd4ab30.acfd63fb-5bcc-4636-9fba-366f6f6eef1a</value>
     </fillValue>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
-  <attributes uuid="4e7d740f-4ebe-490d-8282-afb651cc73fa">
-    <name>УдалитьВид</name>
-    <synonym>
-      <key>ru</key>
-      <value>Вид шины</value>
-    </synonym>
-    <comment>Источник/Приемник</comment>
-    <type>
-      <types>String</types>
-      <stringQualifiers>
-        <length>12</length>
-      </stringQualifiers>
-    </type>
-    <toolTip>
-      <key>ru</key>
-      <value>Источник - текущая ИБ принимает данные шины.
-Приемник - текущая ИБ отправляет данные в шину.</value>
-    </toolTip>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:UndefinedValue"/>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
@@ -462,25 +438,6 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="735dc68d-9733-4804-9d0b-0660fe97d162">
-    <name>ОтправкаБлокироватьТаблицуРегистрации</name>
-    <synonym>
-      <key>ru</key>
-      <value>Блокировать таблицу регистрации при получении данных к отправке</value>
-    </synonym>
-    <type>
-      <types>Boolean</types>
-    </type>
-    <toolTip>
-      <key>ru</key>
-      <value>Блокировать таблицу регистрации при получении данных к отправке</value>
-    </toolTip>
-    <minValue xsi:type="core:UndefinedValue"/>
-    <maxValue xsi:type="core:UndefinedValue"/>
-    <fillValue xsi:type="core:BooleanValue"/>
-    <fullTextSearch>Use</fullTextSearch>
-    <dataHistory>Use</dataHistory>
-  </attributes>
   <attributes uuid="9851c5b1-14c3-44bd-aefb-e0f51cb90405">
     <name>ПриемПроцедура</name>
     <synonym>
@@ -552,15 +509,15 @@
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="13fe19b1-571c-401d-99c4-59b49b4e1121">
-    <name>ПользовательРЗ</name>
+    <name>ПользовательРеглЗадания</name>
     <synonym>
       <key>ru</key>
-      <value>Пользователь РЗ</value>
+      <value>Пользователь регл. задания</value>
     </synonym>
     <type>
       <types>String</types>
       <stringQualifiers>
-        <length>50</length>
+        <length>100</length>
       </stringQualifiers>
     </type>
     <toolTip>

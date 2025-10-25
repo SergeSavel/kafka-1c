@@ -12,30 +12,26 @@
   <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="ac6a6750-1e66-416c-9b10-bc753332bf8e"/>
   <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="2c9bc3fe-2f69-4f07-80d4-877005ee8328"/>
   <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="028f0d8f-3a67-47f2-b578-9b53d7791ceb"/>
-  <configurationExtensionCompatibilityMode>8.3.26</configurationExtensionCompatibilityMode>
+  <configurationExtensionCompatibilityMode>8.3.27</configurationExtensionCompatibilityMode>
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.КафкаАдминистрирование</defaultRoles>
   <vendor>Савельев Сергей</vendor>
-  <version>5.0.0-SNAPSHOT</version>
-  <usedMobileApplicationFunctionalities>
-    <functionality>
-      <use>true</use>
-    </functionality>
-    <functionality>
-      <functionality>OSBackup</functionality>
-      <use>true</use>
-    </functionality>
-  </usedMobileApplicationFunctionalities>
+  <version>5.0.0</version>
+  <usedMobileApplicationFunctionalities/>
   <defaultLanguage>Language.Русский</defaultLanguage>
   <briefInformation>
     <key>ru</key>
     <value>Подсистема взаимодействия с Apache Kafka через REST-прокси</value>
   </briefInformation>
+  <detailedInformation>
+    <key>ru</key>
+    <value>Лицензия Apache 2.0</value>
+  </detailedInformation>
   <copyright>
     <key>ru</key>
-    <value>Автор Савельев Сергей</value>
+    <value>Савельев Сергей Владимирович (serge@savel.pro)</value>
   </copyright>
   <configurationInformationAddress>
     <key>ru</key>
@@ -45,7 +41,7 @@
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
   <modalityUseMode>DontUse</modalityUseMode>
   <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
-  <compatibilityMode>8.3.23</compatibilityMode>
+  <compatibilityMode>8.3.10</compatibilityMode>
   <languages uuid="db4a9ccb-9ef5-4b3c-8577-b6fe5db1b62e">
     <name>Русский</name>
     <synonym>
@@ -63,10 +59,12 @@
   <commonModules>CommonModule.КафкаСервер</commonModules>
   <scheduledJobs>ScheduledJob.КафкаВыгрузка</scheduledJobs>
   <scheduledJobs>ScheduledJob.КафкаЗагрузка</scheduledJobs>
+  <constants>Constant.КафкаКластерПоУмолчанию</constants>
   <catalogs>Catalog.КафкаКластеры</catalogs>
   <catalogs>Catalog.КафкаШины</catalogs>
   <enums>Enum.КафкаНаправленияОбмена</enums>
   <enums>Enum.КафкаСердес</enums>
   <dataProcessors>DataProcessor.КафкаАдаптер</dataProcessors>
+  <dataProcessors>DataProcessor.КафкаАдминистрирование</dataProcessors>
   <informationRegisters>InformationRegister.КафкаПозиции</informationRegisters>
 </mdclass:Configuration>

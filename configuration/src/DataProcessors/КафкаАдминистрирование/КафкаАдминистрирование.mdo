@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="481bd536-52e0-4233-a7c5-f7f87ab788e7">
+  <producedTypes>
+    <objectType typeId="7f270a02-b4f1-4cf4-a826-9c1d716cbee7" valueTypeId="2dfc72db-581b-4099-b61f-d63725e13c94"/>
+    <managerType typeId="6a74e821-391f-46e9-97b5-9a9d5a7b78b5" valueTypeId="41ad0448-3b6d-4805-9961-60120b88dde4"/>
+  </producedTypes>
+  <name>КафкаАдминистрирование</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кафка: Администрирование</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.КафкаАдминистрирование.Form.Основная</defaultForm>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Администрирование кластера</value>
+  </extendedPresentation>
+  <forms uuid="84b55154-2f3e-4899-b62c-d2631b3138b6">
+    <name>Основная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e60b7070-8744-45ac-91d9-9208032087be">
+    <name>СозданиеТемы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создание темы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="931f4bd8-32b0-4a46-9c50-7deda55687c7">
+    <name>ДобавлениеScramПользователя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавление SCRAM-пользователя</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c019605d-013a-48f7-b9cb-901efe31e706">
+    <name>ИзменениеScramПользователя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменение SCRAM-пользователя</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

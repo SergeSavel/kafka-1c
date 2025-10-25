@@ -24,4 +24,6 @@
   <content>CommonPicture.Кафка</content>
   <content>Enum.КафкаНаправленияОбмена</content>
   <content>Enum.КафкаСердес</content>
+  <content>Constant.КафкаКластерПоУмолчанию</content>
+  <content>DataProcessor.КафкаАдминистрирование</content>
 </mdclass:Subsystem>

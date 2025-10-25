@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Constant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dfe63086-b3db-4fa5-9c44-9162f528f8f3">
+  <producedTypes>
+    <managerType typeId="eb399a83-2110-429a-b30c-712f8164b65c" valueTypeId="4054d29f-dece-4782-9c8f-351db157cdeb"/>
+    <valueManagerType typeId="e848f384-862b-4506-ae69-e9a693785a6f" valueTypeId="c7ec06f4-3ca8-4af0-a797-222832e771bb"/>
+    <valueKeyType typeId="06efe3f9-021e-467d-87f8-8f1810cd15fc" valueTypeId="f382d3c1-1ff4-4fc4-996b-78518dfb92c5"/>
+  </producedTypes>
+  <name>КафкаКластерПоУмолчанию</name>
+  <synonym>
+    <key>ru</key>
+    <value>Кафка: Кластер по умолчанию</value>
+  </synonym>
+  <type>
+    <types>CatalogRef.КафкаКластеры</types>
+  </type>
+  <useStandardCommands>true</useStandardCommands>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Кластер по умолчанию</value>
+  </extendedPresentation>
+  <minValue xsi:type="core:UndefinedValue"/>
+  <maxValue xsi:type="core:UndefinedValue"/>
+  <fillChecking>ShowError</fillChecking>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:Constant>

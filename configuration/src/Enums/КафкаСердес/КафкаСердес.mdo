@@ -43,13 +43,6 @@
       <value>Null</value>
     </synonym>
   </enumValues>
-  <enumValues uuid="6f877fd2-0a99-4475-a018-5fcd92397620">
-    <name>ДвоичныеДанные</name>
-    <synonym>
-      <key>ru</key>
-      <value>Двоичные данные</value>
-    </synonym>
-  </enumValues>
   <enumValues uuid="122e956f-0ce6-4620-9456-367fc76a2cba">
     <name>Строка</name>
     <synonym>
@@ -57,32 +50,25 @@
       <value>Строка</value>
     </synonym>
   </enumValues>
-  <enumValues uuid="0353214d-f7c9-4147-928d-2ffc9ae3a1d1">
-    <name>СтрокаAvro</name>
+  <enumValues uuid="6f877fd2-0a99-4475-a018-5fcd92397620">
+    <name>ДвоичныеДанные</name>
     <synonym>
       <key>ru</key>
-      <value>Строка (Avro)</value>
-    </synonym>
-  </enumValues>
-  <enumValues uuid="4ea8c9e6-05d8-4e09-94ee-6ac00a1c652b">
-    <name>СтруктураAvro</name>
-    <synonym>
-      <key>ru</key>
-      <value>Структура (Avro)</value>
+      <value>Двоичные данные</value>
     </synonym>
   </enumValues>
   <enumValues uuid="164f415e-eaa6-43b2-9020-5769ac19204e">
     <name>СтруктураJson</name>
     <synonym>
       <key>ru</key>
-      <value>Структура (JSON)</value>
+      <value>Структура JSON</value>
     </synonym>
   </enumValues>
   <enumValues uuid="961bb9f0-998f-4c3c-9daf-e540abcd9693">
     <name>СоответствиеJson</name>
     <synonym>
       <key>ru</key>
-      <value>Соответствие (Json)</value>
+      <value>Соответствие JSON</value>
     </synonym>
   </enumValues>
   <enumValues uuid="afa0ebb8-ffd8-4b81-b04c-b997e54207b7">

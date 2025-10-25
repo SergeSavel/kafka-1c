@@ -41,18 +41,22 @@
     </extInfo>
   </items>
   <items xsi:type="form:FormField">
-    <name>ПользовательРЗ</name>
+    <name>ПользовательРеглЗадания</name>
     <id>5</id>
+    <title>
+      <key>ru</key>
+      <value>Пользователь РЗ</value>
+    </title>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
-      <segments>Объект.ПользовательРЗ</segments>
+      <segments>Объект.ПользовательРеглЗадания</segments>
     </dataPath>
     <extendedTooltip>
-      <name>ПользовательРЗРасширеннаяПодсказка</name>
+      <name>ПользовательРеглЗаданияРасширеннаяПодсказка</name>
       <id>8</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
@@ -62,7 +66,7 @@
       </extInfo>
     </extendedTooltip>
     <contextMenu>
-      <name>ПользовательРЗКонтекстноеМеню</name>
+      <name>ПользовательРеглЗаданияКонтекстноеМеню</name>
       <id>6</id>
       <autoFill>true</autoFill>
     </contextMenu>

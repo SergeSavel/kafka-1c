@@ -10,7 +10,6 @@
     <value>Кафка: Администрирование кластера</value>
   </synonym>
   <comment>Адаптер для работы с REST Proxy</comment>
-  <useStandardCommands>true</useStandardCommands>
   <defaultForm>DataProcessor.КафкаАдаптер.Form.Администрирование</defaultForm>
   <extendedPresentation>
     <key>ru</key>
