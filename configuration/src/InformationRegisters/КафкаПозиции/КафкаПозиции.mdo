@@ -137,9 +137,7 @@
     <denyIncompleteValues>true</denyIncompleteValues>
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
-    <fillValue xsi:type="core:StringValue">
-      <value></value>
-    </fillValue>
+    <fillValue xsi:type="core:StringValue"/>
     <mainFilter>true</mainFilter>
   </dimensions>
   <dimensions uuid="e15b1c4f-343f-4dc3-94c8-22b7eceaa751">

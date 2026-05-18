@@ -4724,7 +4724,7 @@
                   <value>DESCRIBE</value>
                 </presentation>
                 <value xsi:type="core:StringValue">
-                  <value>DECSCRIBE</value>
+                  <value>DESCRIBE</value>
                 </value>
               </choiceList>
               <choiceList>
