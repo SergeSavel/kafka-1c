@@ -6,5 +6,4 @@
     <value>Кафка: Переопределяемый</value>
   </synonym>
   <server>true</server>
-  <externalConnection>true</externalConnection>
 </mdclass:CommonModule>

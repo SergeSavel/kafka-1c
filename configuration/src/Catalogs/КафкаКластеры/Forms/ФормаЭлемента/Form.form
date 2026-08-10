@@ -257,7 +257,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>ПроксиПароль</name>
-          <id>27</id>
+          <id>141</id>
           <title>
             <key>ru</key>
             <value>Пароль</value>
@@ -268,11 +268,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.ПроксиПароль</segments>
+            <segments>ПроксиПароль</segments>
           </dataPath>
           <extendedTooltip>
             <name>ПроксиПарольРасширеннаяПодсказка</name>
-            <id>29</id>
+            <id>143</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -282,7 +282,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>ПроксиПарольКонтекстноеМеню</name>
-            <id>28</id>
+            <id>142</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
@@ -295,6 +295,8 @@
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
             <wrap>true</wrap>
+            <passwordMode>true</passwordMode>
+            <extendedEditMultipleValues>true</extendedEditMultipleValues>
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
@@ -769,7 +771,7 @@
         </items>
         <items xsi:type="form:FormField">
           <name>КафкаПароль</name>
-          <id>56</id>
+          <id>144</id>
           <title>
             <key>ru</key>
             <value>Пароль</value>
@@ -780,11 +782,11 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.КафкаПароль</segments>
+            <segments>КафкаПароль</segments>
           </dataPath>
           <extendedTooltip>
             <name>КафкаПарольРасширеннаяПодсказка</name>
-            <id>58</id>
+            <id>146</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -794,7 +796,7 @@
           </extendedTooltip>
           <contextMenu>
             <name>КафкаПарольКонтекстноеМеню</name>
-            <id>57</id>
+            <id>145</id>
             <autoFill>true</autoFill>
           </contextMenu>
           <type>InputField</type>
@@ -807,6 +809,8 @@
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
             <wrap>true</wrap>
+            <passwordMode>true</passwordMode>
+            <extendedEditMultipleValues>true</extendedEditMultipleValues>
             <chooseType>true</chooseType>
             <typeDomainEnabled>true</typeDomainEnabled>
             <textEdit>true</textEdit>
@@ -1578,6 +1582,46 @@
       <types>String</types>
       <stringQualifiers>
         <length>255</length>
+      </stringQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>ПроксиПароль</name>
+    <title>
+      <key>ru</key>
+      <value>Прокси пароль</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>КафкаПароль</name>
+    <title>
+      <key>ru</key>
+      <value>Кафка пароль</value>
+    </title>
+    <id>4</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
       </stringQualifiers>
     </valueType>
     <view>

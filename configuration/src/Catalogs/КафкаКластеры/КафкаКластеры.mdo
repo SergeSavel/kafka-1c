@@ -169,7 +169,7 @@
     <type>
       <types>String</types>
       <stringQualifiers>
-        <length>50</length>
+        <length>255</length>
       </stringQualifiers>
     </type>
     <minValue xsi:type="core:UndefinedValue"/>
@@ -178,16 +178,31 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="5c5af495-6ca6-4cdc-9b2d-2a0974dc1f44">
+  <attributes uuid="6e171083-0420-40ea-91ab-8542df3df1f8">
     <name>ПроксиПароль</name>
     <synonym>
       <key>ru</key>
       <value>Прокси пароль</value>
     </synonym>
     <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="5c5af495-6ca6-4cdc-9b2d-2a0974dc1f44">
+    <name>УдалитьПроксиПароль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прокси пароль (удалить)</value>
+    </synonym>
+    <type>
       <types>String</types>
       <stringQualifiers>
-        <length>50</length>
+        <length>255</length>
       </stringQualifiers>
     </type>
     <passwordMode>true</passwordMode>
@@ -304,11 +319,26 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <attributes uuid="db600b74-6521-4efa-a81d-02b2468f970d">
+  <attributes uuid="5fcf7079-1742-4276-a241-2fb689dac798">
     <name>КафкаПароль</name>
     <synonym>
       <key>ru</key>
       <value>Кафка: Пароль</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="db600b74-6521-4efa-a81d-02b2468f970d">
+    <name>УдалитьКафкаПароль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кафка: Пароль (удалить)</value>
     </synonym>
     <type>
       <types>String</types>

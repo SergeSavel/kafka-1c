@@ -6,6 +6,4 @@
     <value>Кафка: Сервер</value>
   </synonym>
   <server>true</server>
-  <serverCall>true</serverCall>
-  <privileged>true</privileged>
 </mdclass:CommonModule>

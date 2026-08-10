@@ -51,4 +51,22 @@
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>
   </forms>
+  <forms uuid="87d63539-69b3-4f3c-b812-7f0e05853fde">
+    <name>РедактированиеПозицииГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование позиции группы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="dd3a50bb-efd7-4e61-880c-b3c2189850e1">
+    <name>УдалениеУчастниковГруппы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удаление участников группы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
 </mdclass:DataProcessor>

@@ -10,7 +10,6 @@
   <picture xsi:type="core:PictureRef">
     <picture>CommonPicture.Кафка</picture>
   </picture>
-  <content>CommonModule.КафкаКлиентСервер</content>
   <content>CommonModule.КафкаПовтИсп</content>
   <content>CommonModule.КафкаСервер</content>
   <content>ScheduledJob.КафкаВыгрузка</content>
@@ -26,4 +25,5 @@
   <content>Enum.КафкаСердес</content>
   <content>Constant.КафкаКластерПоУмолчанию</content>
   <content>DataProcessor.КафкаАдминистрирование</content>
+  <content>CommonModule.КафкаВызовСервера</content>
 </mdclass:Subsystem>

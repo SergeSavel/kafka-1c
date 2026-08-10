@@ -126,36 +126,6 @@
 	
 КонецФункции
 
-Функция ProducerSend(Producer, Topic, KeyString=Неопределено, ValueString, Headers=Неопределено) Экспорт
-	
-	HttpОтвет = ProducerSend_(Producer, Topic, KeyString, ValueString, Headers);
-	
-	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
-	
-КонецФункции
-Функция ProducerSend_(Producer, Topic, KeyString, ValueString, Headers)
-		
-	ProducerSendStringRequest = Новый Структура;
-	ProducerSendStringRequest.Вставить("producerId", Producer.id);
-	ProducerSendStringRequest.Вставить("token", Producer.token);
-	ProducerSendStringRequest.Вставить("topic", Topic);
-	Если Headers <> Неопределено Тогда
-		ProducerSendStringRequest.Вставить("headers", Headers);
-	КонецЕсли;
-	Если KeyString <> Неопределено Тогда
-		ProducerSendStringRequest.Вставить("key", KeyString);
-	КонецЕсли;
-	ProducerSendStringRequest.Вставить("value", ValueString);
-	
-	HttpЗапрос = Новый HttpЗапрос("producer/send");
-	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ProducerSendStringRequest);
-
-	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
-	
-	Возврат ПроверитьHttpОтвет(HttpОтвет);
-	
-КонецФункции
-
 Функция ProducerTouch(Producer) Экспорт
 	
 	HttpОтвет = ProducerTouch_(Producer);
@@ -201,11 +171,107 @@
 	
 КонецФункции	
 
+Функция ProducerSend(Producer, Topic, KeyString = Неопределено, ValueString, Headers = Неопределено) Экспорт
+	
+	HttpОтвет = ProducerSend_(Producer, Topic, KeyString, ValueString, Headers);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция ProducerSend_(Producer, Topic, KeyString, ValueString, Headers)
+		
+	ProducerSendStringRequest = Новый Структура;
+	ProducerSendStringRequest.Вставить("producerId", Producer.id);
+	ProducerSendStringRequest.Вставить("token", Producer.token);
+	ProducerSendStringRequest.Вставить("topic", Topic);
+	Если Headers <> Неопределено Тогда
+		ProducerSendStringRequest.Вставить("headers", Headers);
+	КонецЕсли;
+	Если KeyString <> Неопределено Тогда
+		ProducerSendStringRequest.Вставить("key", KeyString);
+	КонецЕсли;
+	ProducerSendStringRequest.Вставить("value", ValueString);
+	
+	HttpЗапрос = Новый HttpЗапрос("producer/send");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ProducerSendStringRequest);
+
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция ProducerBeginTransaction(Producer) Экспорт
+	
+	HttpОтвет = ProducerBeginTransaction_(Producer);
+		
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция ProducerBeginTransaction_(Producer)
+	
+	ProducerBeginTransactionRequest = Новый Структура;
+	ProducerBeginTransactionRequest.Вставить("producerId", Producer.id);
+	ProducerBeginTransactionRequest.Вставить("token", Producer.token);
+	
+	HttpЗапрос = Новый HttpЗапрос("producer/begin-transaction");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ProducerBeginTransactionRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция ProducerCommitTransaction(Producer) Экспорт
+	
+	HttpОтвет = ProducerCommitTransaction_(Producer);
+		
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция ProducerCommitTransaction_(Producer)
+	
+	ProducerCommitTransactionRequest = Новый Структура;
+	ProducerCommitTransactionRequest.Вставить("producerId", Producer.id);
+	ProducerCommitTransactionRequest.Вставить("token", Producer.token);
+	
+	HttpЗапрос = Новый HttpЗапрос("producer/commit-transaction");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ProducerCommitTransactionRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция ProducerAbortTransaction(Producer) Экспорт
+	
+	HttpОтвет = ProducerAbortTransaction_(Producer);
+		
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция ProducerAbortTransaction_(Producer)
+	
+	ProducerAbortTransactionRequest = Новый Структура;
+	ProducerAbortTransactionRequest.Вставить("producerId", Producer.id);
+	ProducerAbortTransactionRequest.Вставить("token", Producer.token);
+	
+	HttpЗапрос = Новый HttpЗапрос("producer/abort-transaction");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ProducerAbortTransactionRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
 #КонецОбласти
 
 #Область Получение
 
-Функция ConsumerCreate(Name, Config, Знач ExpirationTimeout=Неопределено) Экспорт
+Функция ConsumerCreate(Name, Config, Знач ExpirationTimeout = Неопределено) Экспорт
 	
 	Если ExpirationTimeout = Неопределено Тогда
 		ExpirationTimeout = 60000;
@@ -318,22 +384,22 @@
 	
 КонецФункции
 
-Функция ConsumerListPartitions(Consumer, Topic) Экспорт
+Функция ConsumerGetPartitions(Consumer, Topic) Экспорт
 		
-	HttpОтвет = ConsumerListPartitions_(Consumer, Topic);
+	HttpОтвет = ConsumerGetPartitions_(Consumer, Topic);
 		
 	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
 	
 КонецФункции
-Функция ConsumerListPartitions_(Consumer, Topic)
+Функция ConsumerGetPartitions_(Consumer, Topic)
 		
-	ConsumerListPartitionsRequest = Новый Структура;
-	ConsumerListPartitionsRequest.Вставить("consumerId", Consumer.id);
-	ConsumerListPartitionsRequest.Вставить("token", Consumer.token);
-	ConsumerListPartitionsRequest.Вставить("topic", Topic);
+	ConsumerGetPartitionsRequest = Новый Структура;
+	ConsumerGetPartitionsRequest.Вставить("consumerId", Consumer.id);
+	ConsumerGetPartitionsRequest.Вставить("token", Consumer.token);
+	ConsumerGetPartitionsRequest.Вставить("topic", Topic);
 	
-	HttpЗапрос = Новый HttpЗапрос("consumer/list-partitions");
-	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerListPartitionsRequest);
+	HttpЗапрос = Новый HttpЗапрос("consumer/get-partitions");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerGetPartitionsRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
@@ -404,8 +470,10 @@
 	ConsumerSubscribeRequest.Вставить("token", Consumer.token);
 	Если ТипTopicsOrPattern = Тип("Массив") Или ТипTopicsOrPattern = Тип("ФиксированныйМассив") Тогда
 		ConsumerSubscribeRequest.Вставить("topics", TopicsOrPattern);
-	Иначе
+	ИначеЕсли ТипTopicsOrPattern = Тип("Строка") Тогда
 		ConsumerSubscribeRequest.Вставить("pattern", TopicsOrPattern);
+	Иначе
+		ВызватьИсключение "Некорректный тип параметра 'TopicsOrPattern'.";
 	КонецЕсли;
 			
 	HttpЗапрос = Новый HTTPЗапрос("consumer/subscribe");
@@ -439,6 +507,29 @@
 	
 КонецФункции
 
+Функция ConsumerUnsubscribe(Consumer) Экспорт
+	
+	HttpОтвет = ConsumerUnsubscribe_(Consumer);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция ConsumerUnsubscribe_(Consumer)
+		
+	ConsumerUnsubscribeRequest = Новый Структура;
+	ConsumerUnsubscribeRequest.Вставить("consumerId", Consumer.id);
+	ConsumerUnsubscribeRequest.Вставить("token", Consumer.token);
+			
+	HttpЗапрос = Новый HTTPЗапрос("consumer/unsubscribe");
+	
+	ЗаписатьJSONвHttpЗапрос(HttpЗапрос, ConsumerUnsubscribeRequest);
+
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
 Функция ConsumerSeek(Consumer, Topic, Partition, Offset) Экспорт
 	
 	HttpОтвет = ConsumerSeek_(Consumer, Topic, Partition, Offset);
@@ -457,6 +548,54 @@
 			
 	HttpЗапрос = Новый HTTPЗапрос("consumer/seek");
 	ЗаписатьJSONвHttpЗапрос(HttpЗапрос, ConsumerSeekRequest);
+
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция ConsumerSeekToBeginning(Consumer, Partitions) Экспорт
+	
+	HttpОтвет = ConsumerSeekToBeginning_(Consumer, Partitions);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция ConsumerSeekToBeginning_(Consumer, Partitions)
+	
+	ConsumerSeekToRequest = Новый Структура;
+	ConsumerSeekToRequest.Вставить("consumerId", Consumer.id);
+	ConsumerSeekToRequest.Вставить("token", Consumer.token);
+	ConsumerSeekToRequest.Вставить("partitions", Partitions);
+			
+	HttpЗапрос = Новый HTTPЗапрос("consumer/seek-to-beginning");
+		
+	ЗаписатьJSONвHttpЗапрос(HttpЗапрос, ConsumerSeekToRequest);
+
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция ConsumerSeekToEnd(Consumer, Partitions) Экспорт
+	
+	HttpОтвет = ConsumerSeekToEnd_(Consumer, Partitions);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция ConsumerSeekToEnd_(Consumer, Partitions)
+	
+	ConsumerSeekToRequest = Новый Структура;
+	ConsumerSeekToRequest.Вставить("consumerId", Consumer.id);
+	ConsumerSeekToRequest.Вставить("token", Consumer.token);
+	ConsumerSeekToRequest.Вставить("partitions", Partitions);
+			
+	HttpЗапрос = Новый HTTPЗапрос("consumer/seek-to-end");
+		
+	ЗаписатьJSONвHttpЗапрос(HttpЗапрос, ConsumerSeekToRequest);
 
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
@@ -541,7 +680,7 @@
 	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
 	
 КонецФункции
-Функция ConsumerPollRaw(Consumer, Timeout, Accept=Неопределено) Экспорт
+Функция ConsumerPollRaw(Consumer, Timeout, Accept = Неопределено) Экспорт
 		
 	ConsumerPollRequest = Новый Структура;
 	ConsumerPollRequest.Вставить("consumerId", Consumer.id);
@@ -565,7 +704,7 @@
 		
 	HttpОтвет = ConsumerCommit_(Consumer);
 		
-	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
 	
 КонецФункции
 Функция ConsumerCommit_(Consumer)
@@ -583,11 +722,56 @@
 	
 КонецФункции
 
+Функция ConsumerGetCommited(Consumer, Partitions) Экспорт
+		
+	HttpОтвет = ConsumerGetCommited_(Consumer, Partitions);
+		
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция ConsumerGetCommited_(Consumer, Partitions)
+		
+	ConsumerGetCommitedRequest = Новый Структура;
+	ConsumerGetCommitedRequest.Вставить("consumerId", Consumer.id);
+	ConsumerGetCommitedRequest.Вставить("token", Consumer.token);
+	ConsumerGetCommitedRequest.Вставить("partitions", Partitions);
+	
+	HttpЗапрос = Новый HttpЗапрос("consumer/get-commited");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerGetCommitedRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция ConsumerGetGroupMetadata(Consumer) Экспорт
+		
+	HttpОтвет = ConsumerGetGroupMetadata_(Consumer);
+		
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция ConsumerGetGroupMetadata_(Consumer)
+		
+	ConsumerGetGroupMetadataRequest = Новый Структура;
+	ConsumerGetGroupMetadataRequest.Вставить("consumerId", Consumer.id);
+	ConsumerGetGroupMetadataRequest.Вставить("token", Consumer.token);
+	
+	HttpЗапрос = Новый HttpЗапрос("consumer/get-group-metadata");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerGetGroupMetadataRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
 #КонецОбласти
 
 #Область Администрирование
 
-Функция AdminCreate(Name, Config, Знач ExpirationTimeout=Неопределено) Экспорт
+Функция AdminCreate(Name, Config, Знач ExpirationTimeout = Неопределено) Экспорт
 	
 	Если ExpirationTimeout = Неопределено Тогда
 		ExpirationTimeout = 60000;
@@ -697,18 +881,47 @@
 	
 КонецФункции
 
-Функция AdminListTopics(Admin) Экспорт
+Функция AdminDescribeLogDirs(Admin, BrokerIds) Экспорт
 		
-	HttpОтвет = AdminListTopics_(Admin);
+	HttpОтвет = AdminDescribeLogDirs_(Admin, BrokerIds);
 	
 	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
 	
 КонецФункции
-Функция AdminListTopics_(Admin)
+Функция AdminDescribeLogDirs_(Admin, BrokerIds)
+		
+	AdminDescribeLogDirsRequest = Новый Структура;
+	AdminDescribeLogDirsRequest.Вставить("adminId", Admin.id);
+	AdminDescribeLogDirsRequest.Вставить("token", Admin.token);
+	AdminDescribeLogDirsRequest.Вставить("brokerIds", BrokerIds);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-log-dirs");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeLogDirsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListTopics(Admin, IncludeInternal = Неопределено, Pattern = Неопределено) Экспорт
+		
+	HttpОтвет = AdminListTopics_(Admin, IncludeInternal, Pattern);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListTopics_(Admin, IncludeInternal, Pattern)
 		
 	AdminListTopicsRequest = Новый Структура;
 	AdminListTopicsRequest.Вставить("adminId", Admin.id);
 	AdminListTopicsRequest.Вставить("token", Admin.token);
+	Если IncludeInternal <> Неопределено Тогда
+		AdminListTopicsRequest.Вставить("includeInternal", IncludeInternal);
+	КонецЕсли;
+	Если Pattern <> Неопределено Тогда
+		AdminListTopicsRequest.Вставить("pattern", Pattern);
+	КонецЕсли;
 	
 	HttpЗапрос = Новый HttpЗапрос("admin/list-topics");
 	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListTopicsRequest);
@@ -723,7 +936,7 @@
 	
 	HttpОтвет = AdminCreateTopic_(Admin, TopicName, NumPartitions, ReplicationFactor);
 		
-	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
 	
 КонецФункции
 Функция AdminCreateTopic_(Admin, TopicName, NumPartitions, ReplicationFactor)
@@ -741,6 +954,30 @@
 	
 	HttpЗапрос = Новый HttpЗапрос("admin/create-topic");
 	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminCreateTopicRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminCreateTopics(Admin, Topics) Экспорт
+	
+	HttpОтвет = AdminCreateTopics_(Admin, Topics);
+		
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminCreateTopics_(Admin, Topics)
+		
+	AdminCreateTopicsRequest = Новый Структура;
+	AdminCreateTopicsRequest.Вставить("adminId", Admin.id);
+	AdminCreateTopicsRequest.Вставить("token", Admin.token);
+	AdminCreateTopicsRequest.Вставить("topics", Topics);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/create-topics");
+	
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminCreateTopicsRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
@@ -771,22 +1008,72 @@
 	
 КонецФункции
 
-Функция AdminDescribeTopic(Admin, Topic) Экспорт
+Функция AdminDeleteTopics(Admin, TopicNames) Экспорт
+	
+	HttpОтвет = AdminDeleteTopics_(Admin, TopicNames);
 		
-	HttpОтвет = AdminDescribeTopic_(Admin, Topic);
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDeleteTopics_(Admin, TopicNames)
+		
+	AdminDeleteTopicsRequest = Новый Структура;
+	AdminDeleteTopicsRequest.Вставить("adminId", Admin.id);
+	AdminDeleteTopicsRequest.Вставить("token", Admin.token);
+	AdminDeleteTopicsRequest.Вставить("topicNames", TopicNames);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-topics");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteTopicsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDescribeTopic(Admin, TopicName, IncludeAuthorizedOperations = Неопределено) Экспорт
+		
+	HttpОтвет = AdminDescribeTopic_(Admin, TopicName, IncludeAuthorizedOperations);
 	
 	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
 	
 КонецФункции
-Функция AdminDescribeTopic_(Admin, Topic)
+Функция AdminDescribeTopic_(Admin, TopicName, IncludeAuthorizedOperations)
 		
 	AdminDescribeTopicRequest = Новый Структура;
 	AdminDescribeTopicRequest.Вставить("adminId", Admin.id);
 	AdminDescribeTopicRequest.Вставить("token", Admin.token);
-	AdminDescribeTopicRequest.Вставить("topic", Topic);
+	AdminDescribeTopicRequest.Вставить("topicName", TopicName);
+	Если IncludeAuthorizedOperations <> Неопределено Тогда
+		AdminDescribeTopicRequest.Вставить("includeAuthorizedOperations", IncludeAuthorizedOperations);
+	КонецЕсли;
 	
 	HttpЗапрос = Новый HttpЗапрос("admin/describe-topic");
 	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeTopicRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminCreatePartitions(Admin, Topic, IncreaseTo) Экспорт
+		
+	HttpОтвет = AdminCreatePartitions_(Admin, Topic, IncreaseTo);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminCreatePartitions_(Admin, Topic, IncreaseTo)
+		
+	AdminCreatePartitionsRequest = Новый Структура;
+	AdminCreatePartitionsRequest.Вставить("adminId", Admin.id);
+	AdminCreatePartitionsRequest.Вставить("token", Admin.token);
+	AdminCreatePartitionsRequest.Вставить("topicName", Topic);
+	AdminCreatePartitionsRequest.Вставить("increaseTo", IncreaseTo);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/create-partitions");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminCreatePartitionsRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
@@ -840,24 +1127,74 @@
 	
 КонецФункции
 
-Функция AdminSetTopicConfig(Admin, TopicName, ConfigName, NewValue) Экспорт
+Функция AdminDescribeGroupConfigs(Admin, GroupId) Экспорт
+	
+	HttpОтвет = AdminDescribeGroupConfigs_(Admin, GroupId);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeGroupConfigs_(Admin, GroupId)
 		
-	HttpОтвет = AdminSetTopicConfig_(Admin, TopicName, ConfigName, NewValue);
+	AdminDescribeGroupConfigsRequest = Новый Структура;
+	AdminDescribeGroupConfigsRequest.Вставить("adminId", Admin.id);
+	AdminDescribeGroupConfigsRequest.Вставить("token", Admin.token);
+	AdminDescribeGroupConfigsRequest.Вставить("groupId", GroupId);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-group-configs");
+	
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeGroupConfigsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminAlterTopicConfig(Admin, TopicName, ConfigName, NewValue) Экспорт
+		
+	HttpОтвет = AdminAlterTopicConfig_(Admin, TopicName, ConfigName, NewValue);
 	
 	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
 	
 КонецФункции
-Функция AdminSetTopicConfig_(Admin, TopicName, ConfigName, NewValue)
+Функция AdminAlterTopicConfig_(Admin, TopicName, ConfigName, NewValue)
 		
-	AdminSetTopicConfigRequest = Новый Структура;
-	AdminSetTopicConfigRequest.Вставить("adminId", Admin.id);
-	AdminSetTopicConfigRequest.Вставить("token", Admin.token);
-	AdminSetTopicConfigRequest.Вставить("topicName", TopicName);
-	AdminSetTopicConfigRequest.Вставить("configName", ConfigName);
-	AdminSetTopicConfigRequest.Вставить("newValue", NewValue);
+	AdminAlterTopicConfigRequest = Новый Структура;
+	AdminAlterTopicConfigRequest.Вставить("adminId", Admin.id);
+	AdminAlterTopicConfigRequest.Вставить("token", Admin.token);
+	AdminAlterTopicConfigRequest.Вставить("topicName", TopicName);
+	AdminAlterTopicConfigRequest.Вставить("configName", ConfigName);
+	AdminAlterTopicConfigRequest.Вставить("newValue", NewValue);
 	
-	HttpЗапрос = Новый HttpЗапрос("admin/set-topic-config");
-	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminSetTopicConfigRequest);
+	HttpЗапрос = Новый HttpЗапрос("admin/alter-topic-config");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminAlterTopicConfigRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminAlterGroupConfig(Admin, GroupId, ConfigName, NewValue) Экспорт
+		
+	HttpОтвет = AdminAlterGroupConfig_(Admin, GroupId, ConfigName, NewValue);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminAlterGroupConfig_(Admin, GroupId, ConfigName, NewValue)
+		
+	AdminAlterGroupConfigRequest = Новый Структура;
+	AdminAlterGroupConfigRequest.Вставить("adminId", Admin.id);
+	AdminAlterGroupConfigRequest.Вставить("token", Admin.token);
+	AdminAlterGroupConfigRequest.Вставить("groupId", GroupId);
+	AdminAlterGroupConfigRequest.Вставить("configName", ConfigName);
+	AdminAlterGroupConfigRequest.Вставить("newValue", NewValue);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/alter-group-config");
+	
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminAlterGroupConfigRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
@@ -881,7 +1218,33 @@
 	AdminDeleteTopicConfigRequest.Вставить("configName", ConfigName);
 	
 	HttpЗапрос = Новый HttpЗапрос("admin/delete-topic-config");
+	
 	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteTopicConfigRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteGroupConfig(Admin, GroupId, ConfigName) Экспорт
+		
+	HttpОтвет = AdminDeleteGroupConfig_(Admin, GroupId, ConfigName);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteGroupConfig_(Admin, GroupId, ConfigName)
+		
+	AdminDeleteGroupConfigRequest = Новый Структура;
+	AdminDeleteGroupConfigRequest.Вставить("adminId", Admin.id);
+	AdminDeleteGroupConfigRequest.Вставить("token", Admin.token);
+	AdminDeleteGroupConfigRequest.Вставить("groupId", GroupId);
+	AdminDeleteGroupConfigRequest.Вставить("configName", ConfigName);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-group-config");
+	
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteGroupConfigRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
@@ -1030,6 +1393,640 @@
 	
 	HttpЗапрос = Новый HttpЗапрос("admin/delete-acls");
 	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteAclsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDescribeProducers(Admin, Partitions) Экспорт
+	
+	HttpОтвет = AdminDescribeProducers_(Admin, Partitions);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeProducers_(Admin, Partitions)
+		
+	AdminDescribeProducersRequest = Новый Структура;
+	AdminDescribeProducersRequest.Вставить("adminId", Admin.id);
+	AdminDescribeProducersRequest.Вставить("token", Admin.token);
+	AdminDescribeProducersRequest.Вставить("partitions", Partitions);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-producers");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeProducersRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminAbortTransaction(Admin, TopicPartition, ProducerId, ProducerEpoch, CoordinatorEpoch) Экспорт
+	
+	HttpОтвет = AdminAbortTransaction_(Admin, TopicPartition, ProducerId, ProducerEpoch, CoordinatorEpoch);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminAbortTransaction_(Admin, TopicPartition, ProducerId, ProducerEpoch, CoordinatorEpoch)
+		
+	AdminAbortTransactionRequest = Новый Структура;
+	AdminAbortTransactionRequest.Вставить("adminId", Admin.id);
+	AdminAbortTransactionRequest.Вставить("token", Admin.token);
+	AdminAbortTransactionRequest.Вставить("partition", TopicPartition);
+	AdminAbortTransactionRequest.Вставить("producerId", ProducerId);
+	AdminAbortTransactionRequest.Вставить("producerEpoch", ProducerEpoch);
+	AdminAbortTransactionRequest.Вставить("coordinatorEpoch", CoordinatorEpoch);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/abort-transaction");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminAbortTransactionRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListGroups(Admin, WithTypes = Неопределено, WithProtocolTypes = Неопределено, InStates = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListGroups_(Admin, WithTypes, WithProtocolTypes, InStates);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListGroups_(Admin, WithTypes, WithProtocolTypes, InStates)
+		
+	AdminListGroupsRequest = Новый Структура;
+	AdminListGroupsRequest.Вставить("adminId", Admin.id);
+	AdminListGroupsRequest.Вставить("token", Admin.token);
+	Если WithTypes <> Неопределено Тогда
+		AdminListGroupsRequest.Вставить("withTypes", WithTypes);
+	КонецЕсли;
+	Если WithProtocolTypes <> Неопределено Тогда
+		AdminListGroupsRequest.Вставить("withProtocolTypes", WithProtocolTypes);
+	КонецЕсли;
+	Если InStates <> Неопределено Тогда
+		AdminListGroupsRequest.Вставить("inStates", InStates);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-groups");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListGroupsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDescribeClassicGroup(Admin, GroupId, IncludeAuthorizedOperations = Неопределено) Экспорт
+	
+	HttpОтвет = AdminDescribeClassicGroup_(Admin, GroupId, IncludeAuthorizedOperations);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeClassicGroup_(Admin, GroupId, IncludeAuthorizedOperations)
+		
+	AdminDescribeClassicGroupRequest = Новый Структура;
+	AdminDescribeClassicGroupRequest.Вставить("adminId", Admin.id);
+	AdminDescribeClassicGroupRequest.Вставить("token", Admin.token);
+	AdminDescribeClassicGroupRequest.Вставить("groupId", GroupId);
+	Если IncludeAuthorizedOperations <> Неопределено Тогда
+		AdminDescribeClassicGroupRequest.Вставить("includeAuthorizedOperations", IncludeAuthorizedOperations);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-classic-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeClassicGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDescribeConsumerGroup(Admin, GroupId, IncludeAuthorizedOperations = Неопределено) Экспорт
+	
+	HttpОтвет = AdminDescribeConsumerGroup_(Admin, GroupId, IncludeAuthorizedOperations);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeConsumerGroup_(Admin, GroupId, IncludeAuthorizedOperations)
+		
+	AdminDescribeConsumerGroupRequest = Новый Структура;
+	AdminDescribeConsumerGroupRequest.Вставить("adminId", Admin.id);
+	AdminDescribeConsumerGroupRequest.Вставить("token", Admin.token);
+	AdminDescribeConsumerGroupRequest.Вставить("groupId", GroupId);
+	Если IncludeAuthorizedOperations <> Неопределено Тогда
+		AdminDescribeConsumerGroupRequest.Вставить("includeAuthorizedOperations", IncludeAuthorizedOperations);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-consumer-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeConsumerGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDescribeShareGroup(Admin, GroupId, IncludeAuthorizedOperations = Неопределено) Экспорт
+	
+	HttpОтвет = AdminDescribeShareGroup_(Admin, GroupId, IncludeAuthorizedOperations);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeShareGroup_(Admin, GroupId, IncludeAuthorizedOperations)
+		
+	AdminDescribeShareGroupRequest = Новый Структура;
+	AdminDescribeShareGroupRequest.Вставить("adminId", Admin.id);
+	AdminDescribeShareGroupRequest.Вставить("token", Admin.token);
+	AdminDescribeShareGroupRequest.Вставить("groupId", GroupId);
+	Если IncludeAuthorizedOperations <> Неопределено Тогда
+		AdminDescribeShareGroupRequest.Вставить("includeAuthorizedOperations", IncludeAuthorizedOperations);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-share-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeShareGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDescribeStreamsGroup(Admin, GroupId, IncludeAuthorizedOperations = Неопределено) Экспорт
+	
+	HttpОтвет = AdminDescribeStreamsGroup_(Admin, GroupId, IncludeAuthorizedOperations);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeStreamsGroup_(Admin, GroupId, IncludeAuthorizedOperations)
+		
+	AdminDescribeStreamsGroupRequest = Новый Структура;
+	AdminDescribeStreamsGroupRequest.Вставить("adminId", Admin.id);
+	AdminDescribeStreamsGroupRequest.Вставить("token", Admin.token);
+	AdminDescribeStreamsGroupRequest.Вставить("groupId", GroupId);
+	Если IncludeAuthorizedOperations <> Неопределено Тогда
+		AdminDescribeStreamsGroupRequest.Вставить("includeAuthorizedOperations", IncludeAuthorizedOperations);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-streams-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeStreamsGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListConsumerGroupOffsets(Admin, GroupId, RequireStable = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListConsumerGroupOffsets_(Admin, GroupId, RequireStable);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListConsumerGroupOffsets_(Admin, GroupId, RequireStable)
+		
+	AdminListConsumerGroupOffsetsRequest = Новый Структура;
+	AdminListConsumerGroupOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListConsumerGroupOffsetsRequest.Вставить("token", Admin.token);
+	AdminListConsumerGroupOffsetsRequest.Вставить("groupId", GroupId);
+	Если RequireStable <> Неопределено Тогда
+		AdminListConsumerGroupOffsetsRequest.Вставить("requireStable", RequireStable);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-consumer-group-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListConsumerGroupOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminAlterConsumerGroupOffsets(Admin, GroupId, Offsets) Экспорт
+	
+	HttpОтвет = AdminAlterConsumerGroupOffsets_(Admin, GroupId, Offsets);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminAlterConsumerGroupOffsets_(Admin, GroupId, Offsets)
+		
+	AdminAlterConsumerGroupOffsetsRequest = Новый Структура;
+	AdminAlterConsumerGroupOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminAlterConsumerGroupOffsetsRequest.Вставить("token", Admin.token);
+	AdminAlterConsumerGroupOffsetsRequest.Вставить("groupId", GroupId);
+	AdminAlterConsumerGroupOffsetsRequest.Вставить("offsets", Новый Массив);
+	Для Каждого OffsetsItem Из Offsets Цикл
+		TopicPartitionOffsetMetadata = Новый Структура;
+		TopicPartitionOffsetMetadata.Вставить("topic", OffsetsItem.Topic);
+		TopicPartitionOffsetMetadata.Вставить("partition", OffsetsItem.Partition);
+		TopicPartitionOffsetMetadata.Вставить("offset", OffsetsItem.Offset);
+		Если OffsetsItem.Свойство("Metadata") Тогда
+			TopicPartitionOffsetMetadata.Вставить("metadata", OffsetsItem.Metadata);
+		КонецЕсли;
+		AdminAlterConsumerGroupOffsetsRequest.offsets.Добавить(TopicPartitionOffsetMetadata);
+	КонецЦикла;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/alter-consumer-group-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminAlterConsumerGroupOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteConsumerGroupOffsets(Admin, GroupId, Partitions) Экспорт
+	
+	HttpОтвет = AdminDeleteConsumerGroupOffsets_(Admin, GroupId, Partitions);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteConsumerGroupOffsets_(Admin, GroupId, Partitions)
+		
+	AdminDeleteConsumerGroupOffsetsRequest = Новый Структура;
+	AdminDeleteConsumerGroupOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminDeleteConsumerGroupOffsetsRequest.Вставить("token", Admin.token);
+	AdminDeleteConsumerGroupOffsetsRequest.Вставить("groupId", GroupId);
+	AdminDeleteConsumerGroupOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminDeleteConsumerGroupOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-consumer-group-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteConsumerGroupOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminRemoveMembersFromConsumerGroup(Admin, GroupId, Members = Неопределено, Reason = Неопределено) Экспорт
+	
+	HttpОтвет = AdminRemoveMembersFromConsumerGroup_(Admin, GroupId, Members, Reason);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminRemoveMembersFromConsumerGroup_(Admin, GroupId, Members, Reason)
+		
+	AdminRemoveMembersFromConsumerGroupRequest = Новый Структура;
+	AdminRemoveMembersFromConsumerGroupRequest.Вставить("adminId", Admin.id);
+	AdminRemoveMembersFromConsumerGroupRequest.Вставить("token", Admin.token);
+	AdminRemoveMembersFromConsumerGroupRequest.Вставить("groupId", GroupId);
+	Если Members <> Неопределено Тогда
+		AdminRemoveMembersFromConsumerGroupRequest.Вставить("members", Members);
+	КонецЕсли;
+	Если Reason <> Неопределено Тогда
+		AdminRemoveMembersFromConsumerGroupRequest.Вставить("reason", Reason);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/remove-members-from-consumer-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminRemoveMembersFromConsumerGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteConsumerGroup(Admin, GroupId) Экспорт
+	
+	HttpОтвет = AdminDeleteConsumerGroup_(Admin, GroupId);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteConsumerGroup_(Admin, GroupId)
+		
+	AdminDeleteConsumerGroupRequest = Новый Структура;
+	AdminDeleteConsumerGroupRequest.Вставить("adminId", Admin.id);
+	AdminDeleteConsumerGroupRequest.Вставить("token", Admin.token);
+	AdminDeleteConsumerGroupRequest.Вставить("groupId", GroupId);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-consumer-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteConsumerGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteConsumerGroups(Admin, GroupIds) Экспорт
+	
+	HttpОтвет = AdminDeleteConsumerGroups_(Admin, GroupIds);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteConsumerGroups_(Admin, GroupIds)
+		
+	AdminDeleteConsumerGroupsRequest = Новый Структура;
+	AdminDeleteConsumerGroupsRequest.Вставить("adminId", Admin.id);
+	AdminDeleteConsumerGroupsRequest.Вставить("token", Admin.token);
+	AdminDeleteConsumerGroupsRequest.Вставить("groupIds", GroupIds);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-consumer-groups");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteConsumerGroupsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteShareGroup(Admin, GroupId) Экспорт
+	
+	HttpОтвет = AdminDeleteShareGroup_(Admin, GroupId);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteShareGroup_(Admin, GroupId)
+		
+	AdminDeleteShareGroupRequest = Новый Структура;
+	AdminDeleteShareGroupRequest.Вставить("adminId", Admin.id);
+	AdminDeleteShareGroupRequest.Вставить("token", Admin.token);
+	AdminDeleteShareGroupRequest.Вставить("groupId", GroupId);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-share-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteShareGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteShareGroups(Admin, GroupIds) Экспорт
+	
+	HttpОтвет = AdminDeleteShareGroups_(Admin, GroupIds);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteShareGroups_(Admin, GroupIds)
+		
+	AdminDeleteShareGroupsRequest = Новый Структура;
+	AdminDeleteShareGroupsRequest.Вставить("adminId", Admin.id);
+	AdminDeleteShareGroupsRequest.Вставить("token", Admin.token);
+	AdminDeleteShareGroupsRequest.Вставить("groupIds", GroupIds);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-share-groups");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteShareGroupsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteStreamsGroup(Admin, GroupId) Экспорт
+	
+	HttpОтвет = AdminDeleteStreamsGroup_(Admin, GroupId);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteStreamsGroup_(Admin, GroupId)
+		
+	AdminDeleteStreamsGroupRequest = Новый Структура;
+	AdminDeleteStreamsGroupRequest.Вставить("adminId", Admin.id);
+	AdminDeleteStreamsGroupRequest.Вставить("token", Admin.token);
+	AdminDeleteStreamsGroupRequest.Вставить("groupId", GroupId);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-streams-group");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteStreamsGroupRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminDeleteStreamsGroups(Admin, GroupIds) Экспорт
+	
+	HttpОтвет = AdminDeleteStreamsGroups_(Admin, GroupIds);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminDeleteStreamsGroups_(Admin, GroupIds)
+		
+	AdminDeleteStreamsGroupsRequest = Новый Структура;
+	AdminDeleteStreamsGroupsRequest.Вставить("adminId", Admin.id);
+	AdminDeleteStreamsGroupsRequest.Вставить("token", Admin.token);
+	AdminDeleteStreamsGroupsRequest.Вставить("groupIds", GroupIds);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-streams-groups");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteStreamsGroupsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListEarliestOffsets(Admin, Partitions, IsolationLevel = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListEarliestOffsets_(Admin, Partitions, IsolationLevel);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListEarliestOffsets_(Admin, Partitions, IsolationLevel)
+		
+	AdminListOffsetsRequest = Новый Структура;
+	AdminListOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListOffsetsRequest.Вставить("token", Admin.token);
+	AdminListOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminListOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	Если IsolationLevel <> Неопределено Тогда
+		AdminListOffsetsRequest.Вставить("isolationLevel", IsolationLevel);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-earliest-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListEarliestLocalOffsets(Admin, Partitions, IsolationLevel = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListEarliestLocalOffsets_(Admin, Partitions, IsolationLevel);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListEarliestLocalOffsets_(Admin, Partitions, IsolationLevel)
+		
+	AdminListOffsetsRequest = Новый Структура;
+	AdminListOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListOffsetsRequest.Вставить("token", Admin.token);
+	AdminListOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminListOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	Если IsolationLevel <> Неопределено Тогда
+		AdminListOffsetsRequest.Вставить("isolationLevel", IsolationLevel);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-earliest-local-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListLatestOffsets(Admin, Partitions, IsolationLevel = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListLatestOffsets_(Admin, Partitions, IsolationLevel);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListLatestOffsets_(Admin, Partitions, IsolationLevel)
+		
+	AdminListOffsetsRequest = Новый Структура;
+	AdminListOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListOffsetsRequest.Вставить("token", Admin.token);
+	AdminListOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminListOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	Если IsolationLevel <> Неопределено Тогда
+		AdminListOffsetsRequest.Вставить("isolationLevel", IsolationLevel);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-latest-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListLatestTieredOffsets(Admin, Partitions, IsolationLevel = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListLatestTieredOffsets_(Admin, Partitions, IsolationLevel);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListLatestTieredOffsets_(Admin, Partitions, IsolationLevel)
+		
+	AdminListOffsetsRequest = Новый Структура;
+	AdminListOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListOffsetsRequest.Вставить("token", Admin.token);
+	AdminListOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminListOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	Если IsolationLevel <> Неопределено Тогда
+		AdminListOffsetsRequest.Вставить("isolationLevel", IsolationLevel);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-latest-tiered-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListMaxTimestampOffsets(Admin, Partitions, IsolationLevel = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListMaxTimestampOffsets_(Admin, Partitions, IsolationLevel);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListMaxTimestampOffsets_(Admin, Partitions, IsolationLevel)
+		
+	AdminListOffsetsRequest = Новый Структура;
+	AdminListOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListOffsetsRequest.Вставить("token", Admin.token);
+	AdminListOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminListOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	Если IsolationLevel <> Неопределено Тогда
+		AdminListOffsetsRequest.Вставить("isolationLevel", IsolationLevel);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-max-timestamp-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListOffsetsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminListTimestampOffsets(Admin, Partitions, Timestamp, IsolationLevel = Неопределено) Экспорт
+	
+	HttpОтвет = AdminListTimestampOffsets_(Admin, Partitions, Timestamp, IsolationLevel);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminListTimestampOffsets_(Admin, Partitions, Timestamp, IsolationLevel)
+		
+	AdminListOffsetsRequest = Новый Структура;
+	AdminListOffsetsRequest.Вставить("adminId", Admin.id);
+	AdminListOffsetsRequest.Вставить("token", Admin.token);
+	AdminListOffsetsRequest.Вставить("partitions", Новый Массив);
+	Для Каждого PartitionsItem Из Partitions Цикл
+		TopicPartition = Новый Структура;
+		TopicPartition.Вставить("topic", PartitionsItem.Topic);
+		TopicPartition.Вставить("partition", PartitionsItem.Partition);
+		AdminListOffsetsRequest.partitions.Добавить(TopicPartition);
+	КонецЦикла;
+	AdminListOffsetsRequest.Вставить("timestamp", Timestamp);
+	Если IsolationLevel <> Неопределено Тогда
+		AdminListOffsetsRequest.Вставить("isolationLevel", IsolationLevel);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/list-timestamp-offsets");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminListOffsetsRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	

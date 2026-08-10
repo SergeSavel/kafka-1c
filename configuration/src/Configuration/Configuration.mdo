@@ -18,9 +18,8 @@
   <scriptVariant>Russian</scriptVariant>
   <defaultRoles>Role.КафкаАдминистрирование</defaultRoles>
   <vendor>Савельев Сергей</vendor>
-  <version>5.0.3</version>
+  <version>5.1.0</version>
   <usedMobileApplicationFunctionalities/>
-  <defaultLanguage>Language.Русский</defaultLanguage>
   <briefInformation>
     <key>ru</key>
     <value>Подсистема взаимодействия с Apache Kafka через REST-прокси</value>
@@ -42,21 +41,13 @@
   <modalityUseMode>DontUse</modalityUseMode>
   <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
   <compatibilityMode>8.3.10</compatibilityMode>
-  <languages uuid="db4a9ccb-9ef5-4b3c-8577-b6fe5db1b62e">
-    <name>Русский</name>
-    <synonym>
-      <key>ru</key>
-      <value>Русский</value>
-    </synonym>
-    <languageCode>ru</languageCode>
-  </languages>
   <subsystems>Subsystem.Кафка</subsystems>
   <commonPictures>CommonPicture.Кафка</commonPictures>
   <roles>Role.КафкаАдминистрирование</roles>
-  <commonModules>CommonModule.КафкаКлиентСервер</commonModules>
   <commonModules>CommonModule.КафкаПереопределяемый</commonModules>
   <commonModules>CommonModule.КафкаПовтИсп</commonModules>
   <commonModules>CommonModule.КафкаСервер</commonModules>
+  <commonModules>CommonModule.КафкаВызовСервера</commonModules>
   <scheduledJobs>ScheduledJob.КафкаВыгрузка</scheduledJobs>
   <scheduledJobs>ScheduledJob.КафкаЗагрузка</scheduledJobs>
   <constants>Constant.КафкаКластерПоУмолчанию</constants>
