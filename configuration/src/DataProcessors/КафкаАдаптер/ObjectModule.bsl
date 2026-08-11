@@ -714,7 +714,7 @@
 	ConsumerCommitRequest.Вставить("consumerId", Consumer.id);
 	ConsumerCommitRequest.Вставить("token", Consumer.token);
 	
-	HttpЗапрос = Новый HttpЗапрос("consumer/poll");
+	HttpЗапрос = Новый HttpЗапрос("consumer/commit");
 	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerCommitRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
