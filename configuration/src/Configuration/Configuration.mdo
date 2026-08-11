@@ -22,15 +22,15 @@
   <usedMobileApplicationFunctionalities/>
   <briefInformation>
     <key>ru</key>
-    <value>Подсистема взаимодействия с Apache Kafka через REST-прокси</value>
+    <value>Подсистема взаимодействия с Apache Kafka</value>
   </briefInformation>
   <detailedInformation>
     <key>ru</key>
-    <value>Лицензия Apache 2.0</value>
+    <value>Подсистема взаимодействия с Apache Kafka через HTTP-шлюз</value>
   </detailedInformation>
   <copyright>
     <key>ru</key>
-    <value>Сергей Савельев (serge@savel.pro)</value>
+    <value>Copyright © Сергей Савельев (serge@savel.pro), 2021-2026. Все права защищены.</value>
   </copyright>
   <configurationInformationAddress>
     <key>ru</key>
