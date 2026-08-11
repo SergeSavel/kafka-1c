@@ -723,22 +723,22 @@
 	
 КонецФункции
 
-Функция ConsumerGetCommited(Consumer, Partitions) Экспорт
+Функция ConsumerGetCommitted(Consumer, Partitions) Экспорт
 		
-	HttpОтвет = ConsumerGetCommited_(Consumer, Partitions);
+	HttpОтвет = ConsumerGetCommitted_(Consumer, Partitions);
 		
 	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
 	
 КонецФункции
-Функция ConsumerGetCommited_(Consumer, Partitions)
+Функция ConsumerGetCommitted_(Consumer, Partitions)
 		
-	ConsumerGetCommitedRequest = Новый Структура;
-	ConsumerGetCommitedRequest.Вставить("consumerId", Consumer.id);
-	ConsumerGetCommitedRequest.Вставить("token", Consumer.token);
-	ConsumerGetCommitedRequest.Вставить("partitions", Partitions);
+	ConsumerGetCommittedRequest = Новый Структура;
+	ConsumerGetCommittedRequest.Вставить("consumerId", Consumer.id);
+	ConsumerGetCommittedRequest.Вставить("token", Consumer.token);
+	ConsumerGetCommittedRequest.Вставить("partitions", Partitions);
 	
-	HttpЗапрос = Новый HttpЗапрос("consumer/get-commited");
-	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerGetCommitedRequest);
+	HttpЗапрос = Новый HttpЗапрос("consumer/get-committed");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, ConsumerGetCommittedRequest);
 	
 	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
 	
