@@ -114,10 +114,10 @@
   <defaultObjectForm>Catalog.КафкаКластеры.Form.ФормаЭлемента</defaultObjectForm>
   <defaultListForm>Catalog.КафкаКластеры.Form.ФормаСписка</defaultListForm>
   <attributes uuid="47d7e09d-96d8-421e-907d-d890157a786d">
-    <name>ПроксиАдрес</name>
+    <name>ШлюзАдрес</name>
     <synonym>
       <key>ru</key>
-      <value>Прокси: Адрес</value>
+      <value>Шлюз: Адрес</value>
     </synonym>
     <type>
       <types>String</types>
@@ -135,10 +135,10 @@
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="ae969194-f797-484e-bd1a-b0dabb396514">
-    <name>ПроксиТаймаут</name>
+    <name>ШлюзТаймаут</name>
     <synonym>
       <key>ru</key>
-      <value>Прокси: Таймаут</value>
+      <value>Шлюз: Таймаут</value>
     </synonym>
     <type>
       <types>Number</types>
@@ -161,10 +161,10 @@
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="b9da83ab-81f7-45ca-884b-54b136a9a9df">
-    <name>ПроксиПользователь</name>
+    <name>ШлюзПользователь</name>
     <synonym>
       <key>ru</key>
-      <value>Прокси пользователь</value>
+      <value>Шлюз: Пользователь</value>
     </synonym>
     <type>
       <types>String</types>
@@ -179,10 +179,10 @@
     <dataHistory>Use</dataHistory>
   </attributes>
   <attributes uuid="6e171083-0420-40ea-91ab-8542df3df1f8">
-    <name>ПроксиПароль</name>
+    <name>ШлюзПароль</name>
     <synonym>
       <key>ru</key>
-      <value>Прокси пароль</value>
+      <value>Шлюз: Пароль</value>
     </synonym>
     <type>
       <types>ValueStorage</types>

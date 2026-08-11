@@ -20,7 +20,7 @@
       <key>ru</key>
       <value>Описание ошибки</value>
     </synonym>
-    <comment>Описание ошибки прокси (в случае возникновения).</comment>
+    <comment>Описание ошибки шлюза (в случае возникновения)</comment>
     <type>
       <types>String</types>
       <stringQualifiers/>
@@ -34,7 +34,7 @@
       <key>ru</key>
       <value>Код ответа</value>
     </synonym>
-    <comment>HTTP-код ответа прокси.</comment>
+    <comment>HTTP-код ответа шлюза</comment>
     <type>
       <types>Number</types>
       <numberQualifiers>

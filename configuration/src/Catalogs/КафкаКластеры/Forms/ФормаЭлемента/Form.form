@@ -47,13 +47,13 @@
     <name>ГруппаСтраницы</name>
     <id>30</id>
     <items xsi:type="form:FormGroup">
-      <name>СтраницаПрокси</name>
+      <name>СтраницаШлюз</name>
       <id>32</id>
       <items xsi:type="form:FormGroup">
-        <name>ГруппаПроксиАдресТаймаут</name>
+        <name>ГруппаШлюзАдресТаймаут</name>
         <id>17</id>
         <items xsi:type="form:FormField">
-          <name>ПроксиАдрес</name>
+          <name>ШлюзАдрес</name>
           <id>4</id>
           <title>
             <key>ru</key>
@@ -65,10 +65,10 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.ПроксиАдрес</segments>
+            <segments>Объект.ШлюзАдрес</segments>
           </dataPath>
           <extendedTooltip>
-            <name>ПроксиАдресРасширеннаяПодсказка</name>
+            <name>ШлюзАдресРасширеннаяПодсказка</name>
             <id>6</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
@@ -78,7 +78,7 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>ПроксиАдресКонтекстноеМеню</name>
+            <name>ШлюзАдресКонтекстноеМеню</name>
             <id>5</id>
             <autoFill>true</autoFill>
           </contextMenu>
@@ -96,12 +96,12 @@
             <textEdit>true</textEdit>
             <inputHint>
               <key>ru</key>
-              <value>ПроксиАдрес</value>
+              <value>localhost:8086</value>
             </inputHint>
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>ПроксиТаймаут</name>
+          <name>ШлюзТаймаут</name>
           <id>14</id>
           <title>
             <key>ru</key>
@@ -113,10 +113,10 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.ПроксиТаймаут</segments>
+            <segments>Объект.ШлюзТаймаут</segments>
           </dataPath>
           <extendedTooltip>
-            <name>ПроксиТаймаутРасширеннаяПодсказка</name>
+            <name>ШлюзТаймаутРасширеннаяПодсказка</name>
             <id>16</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
@@ -126,7 +126,7 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>ПроксиТаймаутКонтекстноеМеню</name>
+            <name>ШлюзТаймаутКонтекстноеМеню</name>
             <id>15</id>
             <autoFill>true</autoFill>
           </contextMenu>
@@ -185,10 +185,10 @@
         </userVisible>
         <title>
           <key>ru</key>
-          <value>Прокси адрес/таймаут</value>
+          <value>Шлюз адрес/таймаут</value>
         </title>
         <extendedTooltip>
-          <name>ГруппаПроксиАдресТаймаутРасширеннаяПодсказка</name>
+          <name>ГруппаШлюзАдресТаймаутРасширеннаяПодсказка</name>
           <id>18</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
@@ -208,10 +208,10 @@
         </extInfo>
       </items>
       <items xsi:type="form:FormGroup">
-        <name>ГруппаПроксиЛогинПароль</name>
+        <name>ГруппаШлюзЛогинПароль</name>
         <id>22</id>
         <items xsi:type="form:FormField">
-          <name>ПроксиЛогин</name>
+          <name>ШлюзЛогин</name>
           <id>24</id>
           <title>
             <key>ru</key>
@@ -223,10 +223,10 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Объект.ПроксиПользователь</segments>
+            <segments>Объект.ШлюзПользователь</segments>
           </dataPath>
           <extendedTooltip>
-            <name>ПроксиЛогинРасширеннаяПодсказка</name>
+            <name>ШлюзЛогинРасширеннаяПодсказка</name>
             <id>26</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
@@ -236,7 +236,7 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>ПроксиЛогинКонтекстноеМеню</name>
+            <name>ШлюзЛогинКонтекстноеМеню</name>
             <id>25</id>
             <autoFill>true</autoFill>
           </contextMenu>
@@ -256,7 +256,7 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>ПроксиПароль</name>
+          <name>ШлюзПароль</name>
           <id>141</id>
           <title>
             <key>ru</key>
@@ -268,10 +268,10 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>ПроксиПароль</segments>
+            <segments>ШлюзПароль</segments>
           </dataPath>
           <extendedTooltip>
-            <name>ПроксиПарольРасширеннаяПодсказка</name>
+            <name>ШлюзПарольРасширеннаяПодсказка</name>
             <id>143</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
@@ -281,7 +281,7 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>ПроксиПарольКонтекстноеМеню</name>
+            <name>ШлюзПарольКонтекстноеМеню</name>
             <id>142</id>
             <autoFill>true</autoFill>
           </contextMenu>
@@ -309,10 +309,10 @@
         </userVisible>
         <title>
           <key>ru</key>
-          <value>Прокси логин/пароль</value>
+          <value>Шлюз логин/пароль</value>
         </title>
         <extendedTooltip>
-          <name>ГруппаПроксиЛогинПарольРасширеннаяПодсказка</name>
+          <name>ГруппаШлюзЛогинПарольРасширеннаяПодсказка</name>
           <id>23</id>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
@@ -338,14 +338,10 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Прокси</value>
+        <value>Шлюз</value>
       </title>
-      <toolTip>
-        <key>ru</key>
-        <value>Страница прокси</value>
-      </toolTip>
       <extendedTooltip>
-        <name>СтраницаПроксиРасширеннаяПодсказка</name>
+        <name>СтраницаШлюзРасширеннаяПодсказка</name>
         <id>33</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
@@ -1592,10 +1588,10 @@
     </edit>
   </attributes>
   <attributes>
-    <name>ПроксиПароль</name>
+    <name>ШлюзПароль</name>
     <title>
       <key>ru</key>
-      <value>Прокси пароль</value>
+      <value>Шлюз пароль</value>
     </title>
     <id>3</id>
     <valueType>

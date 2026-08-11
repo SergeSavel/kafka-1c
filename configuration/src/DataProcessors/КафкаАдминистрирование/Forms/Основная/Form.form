@@ -92,7 +92,7 @@
       </extInfo>
     </items>
     <items xsi:type="form:FormField">
-      <name>ВерсияПрокси</name>
+      <name>ВерсияШлюза</name>
       <id>469</id>
       <visible>true</visible>
       <enabled>true</enabled>
@@ -100,10 +100,10 @@
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>ВерсияПрокси</segments>
+        <segments>ВерсияШлюза</segments>
       </dataPath>
       <extendedTooltip>
-        <name>ВерсияПроксиРасширеннаяПодсказка</name>
+        <name>ВерсияШлюзаРасширеннаяПодсказка</name>
         <id>471</id>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
@@ -113,7 +113,7 @@
         </extInfo>
       </extendedTooltip>
       <contextMenu>
-        <name>ВерсияПроксиКонтекстноеМеню</name>
+        <name>ВерсияШлюзаКонтекстноеМеню</name>
         <id>470</id>
         <autoFill>true</autoFill>
       </contextMenu>
@@ -14598,10 +14598,10 @@
     </edit>
   </attributes>
   <attributes>
-    <name>ВерсияПрокси</name>
+    <name>ВерсияШлюза</name>
     <title>
       <key>ru</key>
-      <value>Версия прокси</value>
+      <value>Версия шлюза</value>
     </title>
     <id>10</id>
     <valueType>
