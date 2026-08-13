@@ -1032,6 +1032,31 @@
 	
 КонецФункции
 
+Функция AdminDeleteRecords(Admin, Topic, Partition, BeforeOffset) Экспорт
+	
+	HttpОтвет = AdminDeleteRecords_(Admin, Topic, Partition, BeforeOffset);
+		
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDeleteRecords_(Admin, Topic, Partition, BeforeOffset)
+		
+	AdminDeleteRecordsRequest = Новый Структура;
+	AdminDeleteRecordsRequest.Вставить("adminId", Admin.id);
+	AdminDeleteRecordsRequest.Вставить("token", Admin.token);
+	AdminDeleteRecordsRequest.Вставить("topic", Topic);
+	AdminDeleteRecordsRequest.Вставить("partition", Partition);
+	AdminDeleteRecordsRequest.Вставить("beforeOffset", BeforeOffset);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/delete-records");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDeleteRecordsRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
 Функция AdminDescribeTopic(Admin, TopicName, IncludeAuthorizedOperations = Неопределено) Экспорт
 		
 	HttpОтвет = AdminDescribeTopic_(Admin, TopicName, IncludeAuthorizedOperations);
