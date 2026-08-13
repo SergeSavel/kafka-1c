@@ -2060,6 +2060,56 @@
 	
 КонецФункции
 
+Функция AdminDescribeFeatures(Admin) Экспорт
+	
+	HttpОтвет = AdminDescribeFeatures_(Admin);
+	
+	Возврат ПрочитатьТелоHttpОтвета(HttpОтвет);
+	
+КонецФункции
+Функция AdminDescribeFeatures_(Admin)
+		
+	AdminDescribeFeaturesRequest = Новый Структура;
+	AdminDescribeFeaturesRequest.Вставить("adminId", Admin.id);
+	AdminDescribeFeaturesRequest.Вставить("token", Admin.token);
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/describe-features");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminDescribeFeaturesRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
+Функция AdminUpdateFeature(Admin, FeatureName, VersionLevel, UpgradeType, ValidateOnly = Неопределено) Экспорт
+	
+	HttpОтвет = AdminUpdateFeature_(Admin, FeatureName, VersionLevel, UpgradeType, ValidateOnly);
+	
+	Возврат ?(HttpОтвет = Неопределено, Неопределено, Истина);
+	
+КонецФункции
+Функция AdminUpdateFeature_(Admin, FeatureName, VersionLevel, UpgradeType, ValidateOnly)
+		
+	AdminUpdateFeatureRequest = Новый Структура;
+	AdminUpdateFeatureRequest.Вставить("adminId", Admin.id);
+	AdminUpdateFeatureRequest.Вставить("token", Admin.token);
+	AdminUpdateFeatureRequest.Вставить("featureName", FeatureName);
+	AdminUpdateFeatureRequest.Вставить("versionLevel", VersionLevel);
+	AdminUpdateFeatureRequest.Вставить("upgradeType", UpgradeType);
+	Если ValidateOnly = Неопределено Тогда
+		AdminUpdateFeatureRequest.Вставить("validateOnly", ValidateOnly);
+	КонецЕсли;
+	
+	HttpЗапрос = Новый HttpЗапрос("admin/update-feature");
+	ЗаписатьJsonВHttpЗапрос(HttpЗапрос, AdminUpdateFeatureRequest);
+	
+	HttpОтвет = HttpСоединение.ОтправитьДляОбработки(HttpЗапрос);
+	
+	Возврат ПроверитьHttpОтвет(HttpОтвет);
+	
+КонецФункции
+
 #КонецОбласти
 
 Функция GetVersion() Экспорт
