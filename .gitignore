@@ -8,5 +8,9 @@
 /bin/
 /**/bin/
 
+# Agents
+/.qwen/
+/.claude/
+
 # macOS
 .DS_Store
