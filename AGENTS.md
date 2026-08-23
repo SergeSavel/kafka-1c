@@ -38,7 +38,7 @@ CLI-сборки, линтера и автотестов в репозитори
 
 Ключевые файлы:
 
-- [КафкаСервер/Module.bsl](configuration/src/CommonModules/КафкаСервер/Module.bsl) (~3900 строк) — области
+- [КафкаСервер/Module.bsl](configuration/src/CommonModules/КафкаСервер/Module.bsl) — области
   `АвтоВыгрузка`, `АвтоЗагрузка`, `РучноеИспользование`, `СлужебныеФункции`, `СериализацияJSON/XML/AvroAsXml`.
 - [КафкаАдаптер/ObjectModule.bsl](configuration/src/DataProcessors/КафкаАдаптер/ObjectModule.bsl) — `Инициализировать`
   создаёт `HttpСоединение`, дальше по методу на каждый эндпойнт шлюза.
