@@ -101,4 +101,7 @@ SCRAM-аутентификацию.
 
 Apache License 2.0 — см. [LICENSE](LICENSE), атрибуция в [NOTICE](NOTICE).
 
+Apache®, Apache Kafka® и логотип Apache Kafka — товарные знаки The Apache Software Foundation.
+Подсистема не аффилирована с The Apache Software Foundation и не одобрена ею.
+
 Автор: Сергей Савельев (serge@savel.pro).
