@@ -1,0 +1,66 @@
+site_name: Подсистема «Кафка» для 1С:Предприятие 8.3
+site_description: Обмен данными между «1С:Предприятие 8.3» и Apache Kafka через HTTP-шлюз
+docs_dir: docs
+repo_url: https://github.com/SergeSavel/kafka-1c
+edit_uri: edit/main/docs/
+copyright: Apache License 2.0. Apache®, Apache Kafka® и логотип Apache Kafka — товарные знаки The Apache Software Foundation.
+
+theme:
+  name: material
+  language: ru
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - content.code.copy
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+
+validation:
+  anchors: warn
+  unrecognized_links: warn
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+
+nav:
+  - Обзор: index.md
+  - Внедрение:
+      - Установка: setup/install.md
+      - Шлюз: setup/gateway.md
+      - Кластер: setup/cluster.md
+      - Шина: setup/bus.md
+  - Разработка:
+      - Отправка данных: dev/export.md
+      - Получение данных: dev/import.md
+      - Обработчик обмена: dev/handler.md
+      - Сериализация ключей и значений: dev/serdes.md
+      - Прямая работа с Kafka: dev/api.md
+      - Функции сериализации: dev/serialization.md
+      - Точки расширения: dev/extension.md
+  - Администрирование:
+      - Рабочее место: admin/workplace.md
+      - Позиции чтения: admin/offsets.md
+      - Диагностика: admin/troubleshooting.md
