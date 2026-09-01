@@ -182,7 +182,7 @@
     <name>КлючСердес</name>
     <synonym>
       <key>ru</key>
-      <value>Ключ сердес</value>
+      <value>Сердес ключа</value>
     </synonym>
     <type>
       <types>EnumRef.КафкаСердес</types>
@@ -204,7 +204,7 @@
     <name>ЗначениеСердес</name>
     <synonym>
       <key>ru</key>
-      <value>Значение сердес</value>
+      <value>Сердес значения</value>
     </synonym>
     <type>
       <types>EnumRef.КафкаСердес</types>
@@ -253,7 +253,7 @@
     <name>ОбменКоличествоПотоков</name>
     <synonym>
       <key>ru</key>
-      <value>Обмен количество потоков</value>
+      <value>Количество потоков обмена</value>
     </synonym>
     <type>
       <types>Number</types>

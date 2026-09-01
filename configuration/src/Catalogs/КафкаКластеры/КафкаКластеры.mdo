@@ -341,7 +341,7 @@
     <name>КафкаКонфигурацияОтправителя</name>
     <synonym>
       <key>ru</key>
-      <value>Кафка: Конфигурация</value>
+      <value>Кафка: Конфигурация отправителя</value>
     </synonym>
     <toolTip>
       <key>ru</key>
