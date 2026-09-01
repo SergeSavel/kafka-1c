@@ -1,5 +1,6 @@
 site_name: Подсистема «Кафка» для 1С:Предприятие 8.3
 site_description: Обмен данными между «1С:Предприятие 8.3» и Apache Kafka через HTTP-шлюз
+site_url: https://kafka.savel.pro/
 docs_dir: docs
 repo_url: https://github.com/SergeSavel/kafka-1c
 edit_uri: edit/main/docs/
