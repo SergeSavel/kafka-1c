@@ -34,7 +34,7 @@
   </copyright>
   <configurationInformationAddress>
     <key>ru</key>
-    <value>https://github.com/SergeSavel/kafka-1c</value>
+    <value>https://kafka.savel.pro</value>
   </configurationInformationAddress>
   <dataLockControlMode>Managed</dataLockControlMode>
   <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
