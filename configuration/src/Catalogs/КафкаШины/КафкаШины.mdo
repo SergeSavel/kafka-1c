@@ -138,6 +138,10 @@
   </attributes>
   <attributes uuid="86e4a878-1947-491e-b11c-87347139f631">
     <name>Тема</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тема</value>
+    </synonym>
     <comment>Тема Kafka</comment>
     <type>
       <types>String</types>
