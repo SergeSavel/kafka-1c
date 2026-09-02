@@ -6,6 +6,7 @@
 
 # MkDocs
 /site/
+/.venv/
 
 # Binary
 /bin/
