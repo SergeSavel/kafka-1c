@@ -8,6 +8,7 @@ copyright: Apache License 2.0. Apache®, Apache Kafka® и логотип Apache
 
 theme:
   name: material
+  custom_dir: overrides
   language: ru
   font:
     text: IBM Plex Sans
