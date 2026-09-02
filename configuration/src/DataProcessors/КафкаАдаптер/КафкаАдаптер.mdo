@@ -7,13 +7,9 @@
   <name>КафкаАдаптер</name>
   <synonym>
     <key>ru</key>
-    <value>Кафка: Администрирование кластера</value>
+    <value>Кафка: Адаптер</value>
   </synonym>
-  <comment>Адаптер для работы с REST Proxy</comment>
-  <extendedPresentation>
-    <key>ru</key>
-    <value>Администрирование кластера</value>
-  </extendedPresentation>
+  <comment>Адаптер для работы с Kafka HTTP Gateway</comment>
   <attributes uuid="81bbf52a-7e89-4708-b655-8835798136ff">
     <name>ОписаниеОшибки</name>
     <synonym>

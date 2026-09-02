@@ -13,7 +13,7 @@
   <defaultForm>DataProcessor.КафкаАдминистрирование.Form.Основная</defaultForm>
   <extendedPresentation>
     <key>ru</key>
-    <value>Администрирование кластера</value>
+    <value>Администрирование кластера Kafka</value>
   </extendedPresentation>
   <forms uuid="84b55154-2f3e-4899-b62c-d2631b3138b6">
     <name>Основная</name>
