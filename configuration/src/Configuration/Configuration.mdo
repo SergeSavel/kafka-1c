@@ -32,6 +32,10 @@
     <key>ru</key>
     <value>Copyright © Сергей Савельев (serge@savel.pro), 2021-2026. Все права защищены.</value>
   </copyright>
+  <vendorInformationAddress>
+    <key>ru</key>
+    <value>https://savel.pro</value>
+  </vendorInformationAddress>
   <configurationInformationAddress>
     <key>ru</key>
     <value>https://kafka.savel.pro</value>
