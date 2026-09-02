@@ -138,7 +138,7 @@
   </attributes>
   <attributes uuid="86e4a878-1947-491e-b11c-87347139f631">
     <name>Тема</name>
-    <comment>Топик Кафки</comment>
+    <comment>Тема Kafka</comment>
     <type>
       <types>String</types>
       <stringQualifiers>
@@ -147,7 +147,7 @@
     </type>
     <toolTip>
       <key>ru</key>
-      <value>Топик Кафка</value>
+      <value>Тема Kafka</value>
     </toolTip>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
