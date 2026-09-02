@@ -37,7 +37,7 @@ description: "Подсистема «Кафка» — мини-фреймвор�
 | Подсистема «Кафка» | [релизы](https://github.com/SergeSavel/kafka-1c/releases) | [релизы](https://gitflic.ru/project/sergesavel/kafka-1c/release) |
 | Kafka HTTP Gateway | [релизы](https://github.com/SergeSavel/kafka-gateway/releases) | [релизы](https://gitflic.ru/project/sergesavel/kafka-gateway/release) |
 
-Подсистема и шлюз обновляются согласованно: они общаются по двоичному протоколу с номером версии, и рассогласование версий приводит к ошибке обмена. Устанавливайте их из релизов одной версии — см. [Установка](setup/install.md) и [Шлюз](setup/gateway.md).
+Минимально необходимая версия шлюза указана в описании устанавливаемого релиза подсистемы; более новый шлюз подходит. См. [Установка](setup/install.md) и [Шлюз](setup/gateway.md).
 
 ## Основные понятия
 
