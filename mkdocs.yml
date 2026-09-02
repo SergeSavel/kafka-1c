@@ -62,7 +62,7 @@ nav:
   - Разработка:
       - Отправка данных: dev/export.md
       - Получение данных: dev/import.md
-      - Обработчик обмена: dev/handler.md
+      - Обработка обмена: dev/handler.md
       - Сериализация ключей и значений: dev/serdes.md
       - Прямая работа с Kafka: dev/api.md
       - Функции сериализации: dev/serialization.md
