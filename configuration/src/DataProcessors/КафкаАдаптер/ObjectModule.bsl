@@ -1274,7 +1274,7 @@
 	AdminUpdateFeatureRequest.Вставить("featureName", FeatureName);
 	AdminUpdateFeatureRequest.Вставить("versionLevel", VersionLevel);
 	AdminUpdateFeatureRequest.Вставить("upgradeType", UpgradeType);
-	Если ValidateOnly = Неопределено Тогда
+	Если ValidateOnly <> Неопределено Тогда
 		AdminUpdateFeatureRequest.Вставить("validateOnly", ValidateOnly);
 	КонецЕсли;
 	
