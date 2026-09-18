@@ -1617,7 +1617,7 @@
     <valueType>
       <types>String</types>
       <stringQualifiers>
-        <length>20</length>
+        <length>255</length>
       </stringQualifiers>
     </valueType>
     <view>
